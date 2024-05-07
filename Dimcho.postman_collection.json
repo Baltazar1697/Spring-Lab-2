@@ -1,0 +1,617 @@
+{
+	"info": {
+		"_postman_id": "f6d6cd97-cca8-40b0-82c9-e446874c9e55",
+		"name": "Dimcho",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18847558"
+	},
+	"item": [
+		{
+			"name": "Controllers",
+			"item": [
+				{
+					"name": "Batteries",
+					"item": [
+						{
+							"name": "Find all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/batteries/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"batteries",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/batteries/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"batteries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"model\": \"ABC123\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"type\": \"Lithium-ion\",\r\n  \"capacity\": 5000,\r\n  \"productionDate\": \"2024-05-10\",\r\n  \"chargeTime\": 2,\r\n  \"fastChargeAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/batteries/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"batteries",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"model\": \"ZXCVB\",\r\n  \"manufacturer\": \"New batt.\",\r\n  \"type\": \"Lithium-ion\",\r\n  \"capacity\": 3600,\r\n  \"productionDate\": \"2024-05-10\",\r\n  \"chargeTime\": 4,\r\n  \"fastChargeAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/batteries/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"batteries",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"model\": \"UPDATE FIELD\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"type\": \"Lithium-ion\",\r\n  \"capacity\": 5000,\r\n  \"productionDate\": \"2024-05-10\",\r\n  \"chargeTime\": 2,\r\n  \"fastChargeAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/batteries/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"batteries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/batteries/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"batteries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cars",
+					"item": [
+						{
+							"name": "Find all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cars/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cars",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cars/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cars",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"Toyota\",\r\n  \"model\": \"XYZ789\",\r\n  \"manufacturer\": \"Updated Manufacturer\",\r\n  \"productionDate\": \"2023-06-15\",\r\n  \"maxSpeed\": 150,\r\n  \"price\": 540000,\r\n  \"absAvailable\": false,\r\n  \"batteryId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cars/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cars",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"NEW TITLE\",\r\n  \"model\": \"XYZ789\",\r\n  \"manufacturer\": \"Updated Manufacturer\",\r\n  \"productionDate\": \"2023-06-15\",\r\n  \"maxSpeed\": 150,\r\n  \"price\": 540000,\r\n  \"absAvailable\": false,\r\n  \"batteryId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cars/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cars",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cars/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cars",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "fn route",
+			"item": [
+				{
+					"name": "Batteries",
+					"item": [
+						{
+							"name": "Find all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/fn/batteries/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"batteries",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/fn/batteries/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"batteries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"model\": \"ABC123\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"type\": \"Lithium-ion\",\r\n  \"capacity\": 5000,\r\n  \"productionDate\": \"2024-05-10\",\r\n  \"chargeTime\": 2,\r\n  \"fastChargeAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/batteries/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"batteries",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"model\": \"ZXCVB\",\r\n  \"manufacturer\": \"New batt.\",\r\n  \"type\": \"Lithium-ion\",\r\n  \"capacity\": 3600,\r\n  \"productionDate\": \"2024-05-10\",\r\n  \"chargeTime\": 4,\r\n  \"fastChargeAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/batteries/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"batteries",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"model\": \"UPDATE FIELD\",\r\n  \"manufacturer\": \"Example Manufacturer\",\r\n  \"type\": \"Lithium-ion\",\r\n  \"capacity\": 5000,\r\n  \"productionDate\": \"2024-05-10\",\r\n  \"chargeTime\": 2,\r\n  \"fastChargeAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/batteries/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"batteries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/batteries/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"batteries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cars",
+					"item": [
+						{
+							"name": "Find all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/fn/cars/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"cars",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/fn/cars/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"cars",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"Toyota\",\r\n  \"model\": \"XYZ789\",\r\n  \"manufacturer\": \"Updated Manufacturer\",\r\n  \"productionDate\": \"2023-06-15\",\r\n  \"maxSpeed\": 150,\r\n  \"price\": 540000,\r\n  \"absAvailable\": false,\r\n  \"batteryId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/cars/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"cars",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brand\": \"NEW TITLE\",\r\n  \"model\": \"XYZ789\",\r\n  \"manufacturer\": \"Updated Manufacturer\",\r\n  \"productionDate\": \"2023-06-15\",\r\n  \"maxSpeed\": 150,\r\n  \"price\": 540000,\r\n  \"absAvailable\": false,\r\n  \"batteryId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/cars/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"cars",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/fn/cars/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"fn",
+										"cars",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
