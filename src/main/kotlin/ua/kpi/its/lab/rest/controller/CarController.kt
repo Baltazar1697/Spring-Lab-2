@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*
 import ua.kpi.its.lab.rest.dto.CarRequest
 import ua.kpi.its.lab.rest.dto.CarResponse
 import ua.kpi.its.lab.rest.entity.Car
+import ua.kpi.its.lab.rest.svc.BatteryService
 import ua.kpi.its.lab.rest.svc.CarService
 
 /**
@@ -13,7 +14,8 @@ import ua.kpi.its.lab.rest.svc.CarService
 @RestController
 @RequestMapping("/cars")
 class CarController(
-    private val carService: CarService
+    private val carService: CarService,
+    private val batteryService: BatteryService
 ) {
 
     /**
@@ -58,11 +60,11 @@ class CarController(
      */
     @PutMapping("/{id}")
     fun updateCar(@PathVariable id: Long, @RequestBody carRequest: CarRequest): ResponseEntity<CarResponse> {
-        if (!carService.existsById(id)) {
+        return if (!carService.existsById(id) || !batteryService.existsById(carRequest.batteryId)) {
             return ResponseEntity.notFound().build()
+        } else {
+            ResponseEntity.ok(carService.update(id, carRequest))
         }
-
-        return ResponseEntity.ok(carService.update(id, carRequest))
     }
 
     /**

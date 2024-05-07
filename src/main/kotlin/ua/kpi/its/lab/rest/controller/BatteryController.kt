@@ -59,11 +59,11 @@ class BatteryController(private val batteryService: BatteryService) {
         @PathVariable id: Long,
         @RequestBody batteryRequest: BatteryRequest
     ): ResponseEntity<BatteryResponse> {
-        if (!batteryService.existsById(id)) {
-            return ResponseEntity.notFound().build()
+        return if (!batteryService.existsById(id)) {
+            ResponseEntity.notFound().build()
+        } else {
+            ResponseEntity.ok(batteryService.update(id, batteryRequest))
         }
-
-        return ResponseEntity.ok(batteryService.update(id, batteryRequest))
     }
 
     /**

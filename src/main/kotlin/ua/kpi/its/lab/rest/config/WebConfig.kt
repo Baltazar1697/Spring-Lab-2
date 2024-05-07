@@ -9,7 +9,10 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 import org.springframework.web.servlet.function.RouterFunction
+import org.springframework.web.servlet.function.ServerResponse
 import org.springframework.web.servlet.function.router
+import ua.kpi.its.lab.rest.handler.BatteryHandler
+import ua.kpi.its.lab.rest.handler.CarHandler
 import java.text.SimpleDateFormat
 
 @Configuration
@@ -26,15 +29,26 @@ class WebConfig : WebMvcConfigurer {
             .add(MappingJackson2HttpMessageConverter(builder.build()))
     }
 
-//    @Bean
-//    fun functionalRoutes(): RouterFunction<*> = router {
-//        "/fn".nest {
-//            "/example".nest {
-//                GET("") {
-//                    ok().body(ExampleDto("example"))
-//                }
-//            }
-//
-//        }
-//    }
+    @Bean
+    fun functionalRoutes(
+        batteryHandler: BatteryHandler,
+        carHandler: CarHandler
+    ): RouterFunction<ServerResponse> = router {
+        "/fn".nest {
+            "/batteries".nest {
+                GET("/", batteryHandler::getAll)
+                POST("/", batteryHandler::create)
+                GET("/{id}", batteryHandler::getById)
+                PUT("/{id}", batteryHandler::update)
+                DELETE("/{id}", batteryHandler::delete)
+            }
+            "/cars".nest {
+                GET("/", carHandler::getAll)
+                POST("/", carHandler::create)
+                GET("/{id}", carHandler::getById)
+                PUT("/{id}", carHandler::update)
+                DELETE("/{id}", carHandler::delete)
+            }
+        }
+    }
 }
