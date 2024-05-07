@@ -10,7 +10,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 import org.springframework.web.servlet.function.RouterFunction
 import org.springframework.web.servlet.function.router
-import ua.kpi.its.lab.rest.dto.ExampleDto
 import java.text.SimpleDateFormat
 
 @Configuration
@@ -27,15 +26,15 @@ class WebConfig : WebMvcConfigurer {
             .add(MappingJackson2HttpMessageConverter(builder.build()))
     }
 
-    @Bean
-    fun functionalRoutes(): RouterFunction<*> = router {
-        "/fn".nest {
-            "/example".nest {
-                GET("") {
-                    ok().body(ExampleDto("example"))
-                }
-            }
-
-        }
-    }
+//    @Bean
+//    fun functionalRoutes(): RouterFunction<*> = router {
+//        "/fn".nest {
+//            "/example".nest {
+//                GET("") {
+//                    ok().body(ExampleDto("example"))
+//                }
+//            }
+//
+//        }
+//    }
 }
